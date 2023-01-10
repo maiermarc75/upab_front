@@ -2,11 +2,29 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "Run Chrome",
+        "name": "WSL Chrome",
         "type": "chrome",
         "request": "launch",
         "url": "http://localhost:3000",
-        "webRoot": "${workspaceFolder}"
-      }
+        "webRoot": "${workspaceFolder}/src",
+        "sourceMapPathOverrides": {
+          "/*": "/__vscode-remote-uri__/*"
+        },
+        "sourceMaps": true,
+        "smartStep": true,
+        "outFiles": [
+          "${workspaceFolder}/**/*.js",
+          "!**/node_modules/**"
+        ]
+      },
+    //   {
+    //     "type": "node",
+    //     "request": "launch",
+    //     "name": "Launch via Yarn",
+    //     "runtimeExecutable": "yarn",
+    //     "cwd": "${workspaceFolder}",
+    //     "runtimeArgs": ["start:debug"],
+    //     "port": 5858
+    // }
     ]
-  }
+}
